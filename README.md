@@ -18,6 +18,9 @@
 ![Screenshot](images/home.PNG)
 ![Screenshot](images/promotion.PNG)
 ![Screenshot](images/shopping.PNG)
+![Screenshot](images/product.PNG)
+![Screenshot](images/home02.PNG)
+![Screenshot](images/contact.PNG)
 
 ## 📋 Table of Contents
 
