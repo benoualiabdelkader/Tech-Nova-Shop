@@ -1,0 +1,423 @@
+/* TechNova Custom Styles */
+
+/* Body and base styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #111827; /* bg-gray-900 */
+    color: #f9fafb; /* text-gray-50 */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive layout fix */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+/* Product Card Styling */
+.product-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-card-image:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal-product-image {
+    max-width: 400px;
+    height: 300px;
+    object-fit: contain;
+}
+
+/* Advanced Search Suggestions */
+#search-suggestions {
+    z-index: 1000;
+}
+
+/* Toast Animation Classes */
+.toast-enter {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.toast-enter {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+.toast-exit {
+    animation: slideOut 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Star rating styling */
+.star-rating {
+    color: #fbbf24;
+}
+
+/* Loading animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4f46e5;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4f46e5 #1f2937;
+}
+
+/* Product grid responsive improvements */
+@media (max-width: 640px) {
+    .grid-cols-1 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Hero slider styles */
+.slider-item {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Button hover effects */
+button:hover {
+    transform: translateY(-1px);
+}
+
+.add-to-cart-btn:hover {
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+}
+
+/* Navigation hover effects */
+.nav-link:hover {
+    color: #6366f1;
+    transition: color 0.3s ease;
+}
+
+/* Card hover effect enhancement */
+.bg-gray-800:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Price filter dropdown */
+select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Search bar enhancements */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Category filter active state */
+.category-filter.active {
+    background-color: #6366f1;
+    color: white;
+}
+
+/* Cart badge animation */
+#cart-count {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Footer improvements */
+footer a:hover {
+    color: #6366f1;
+    transition: color 0.3s ease;
+}
+
+/* Mobile menu improvements */
+@media (max-width: 768px) {
+    #mobile-menu {
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* Form styling improvements */
+.form-input {
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    transform: translateY(-2px);
+}
+
+/* Quantity input styling */
+.quantity-input {
+    transition: all 0.3s ease;
+}
+
+.quantity-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Line clamp utility for product descriptions */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Improved modal backdrop */
+.modal-backdrop {
+    backdrop-filter: blur(4px);
+}
+
+/* Slider navigation button improvements */
+#prev-slide,
+#next-slide {
+    transition: all 0.3s ease;
+}
+
+#prev-slide:hover,
+#next-slide:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+/* Search suggestions styling */
+#search-suggestions div:hover {
+    background-color: #374151;
+}
+
+/* Active filter tags */
+.filter-tag {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Checkout form improvements */
+.checkout-section {
+    border-left: 4px solid #6366f1;
+}
+
+/* Loading spinner enhancement */
+.loading-spinner {
+    border-top-color: #6366f1;
+    animation: spin 1s linear infinite;
+}
+
+/* Newsletter section styling */
+.newsletter-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Product rating stars */
+.rating-stars {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+    .text-4xl {
+        font-size: 2rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Improved focus states for accessibility */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Cart summary styling */
+.cart-summary {
+    border-top: 2px solid #6366f1;
+}
+
+/* Empty state styling */
+.empty-state {
+    opacity: 0.7;
+}
+
+/* Product modal improvements */
+.product-modal .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Dark theme enhancements */
+.dark-card {
+    background: linear-gradient(145deg, #1f2937, #111827);
+}
+
+.dark-card:hover {
+    background: linear-gradient(145deg, #374151, #1f2937);
+}
+
+/* Account Management Styles */
+#account-dropdown {
+    position: relative;
+}
+
+#account-menu {
+    min-width: 200px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    border: 1px solid #374151;
+}
+
+#account-menu a:hover,
+#account-menu button:hover {
+    background-color: #374151;
+    transition: background-color 0.2s ease;
+}
+
+/* Profile page styling */
+.profile-avatar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Order status badges */
+.order-status-processing {
+    background-color: #d97706;
+    color: #fef3c7;
+}
+
+.order-status-shipped {
+    background-color: #2563eb;
+    color: #dbeafe;
+}
+
+.order-status-delivered {
+    background-color: #059669;
+    color: #d1fae5;
+}
+
+/* Settings toggle switches */
+.toggle-switch {
+    transition: all 0.3s ease;
+}
+
+.toggle-switch:checked {
+    background-color: #6366f1;
+}
+
+/* Account form improvements */
+.account-form input:focus,
+.account-form textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Demo login button */
+.demo-login-btn {
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.demo-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}

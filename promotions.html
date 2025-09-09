@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions - Tech Nova</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #f9fafb;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .promotion-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #1f2937, #374151);
+        }
+        .promotion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .countdown {
+            font-variant-numeric: tabular-nums;
+        }
+        .flash-animation {
+            animation: flash 2s infinite;
+        }
+        @keyframes flash {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-50">
+    <!-- Header -->
+    <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-40 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 text-2xl font-bold text-white flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-indigo-400">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        Tech Nova
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="login.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                    <a href="signup.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <section class="gradient-bg rounded-2xl p-8 mb-12 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">🔥 MEGA SALE 🔥</h1>
+            <p class="text-xl md:text-2xl mb-6">Up to 70% OFF on Tech Gadgets!</p>
+            <div class="flex justify-center items-center space-x-4 mb-6">
+                <div class="text-center">
+                    <div id="days" class="text-3xl font-bold countdown">00</div>
+                    <div class="text-sm">DAYS</div>
+                </div>
+                <div class="text-2xl">:</div>
+                <div class="text-center">
+                    <div id="hours" class="text-3xl font-bold countdown">00</div>
+                    <div class="text-sm">HOURS</div>
+                </div>
+                <div class="text-2xl">:</div>
+                <div class="text-center">
+                    <div id="minutes" class="text-3xl font-bold countdown">00</div>
+                    <div class="text-sm">MINUTES</div>
+                </div>
+                <div class="text-2xl">:</div>
+                <div class="text-center">
+                    <div id="seconds" class="text-3xl font-bold countdown">00</div>
+                    <div class="text-sm">SECONDS</div>
+                </div>
+            </div>
+            <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105">
+                Shop Now & Save Big!
+            </button>
+        </section>
+
+        <!-- Flash Deals -->
+        <section class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-3xl font-bold">⚡ Flash Deals</h2>
+                <span class="flash-animation text-red-500 font-bold">LIMITED TIME!</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Flash Deal 1 -->
+                <div class="promotion-card rounded-xl p-6 border border-gray-600">
+                    <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop" alt="Headphones" class="w-full h-48 object-cover rounded-lg">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-bold">75% OFF</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Premium Wireless Headphones</h3>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl font-bold text-green-400">$49.99</span>
+                        <span class="text-lg text-gray-400 line-through">$199.99</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mb-2">
+                        <div class="bg-orange-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">Only 3 left in stock!</p>
+                    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition">
+                        Grab Deal Now!
+                    </button>
+                </div>
+
+                <!-- Flash Deal 2 -->
+                <div class="promotion-card rounded-xl p-6 border border-gray-600">
+                    <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=300&fit=crop" alt="Smartwatch" class="w-full h-48 object-cover rounded-lg">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-bold">60% OFF</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Smart Fitness Watch</h3>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl font-bold text-green-400">$79.99</span>
+                        <span class="text-lg text-gray-400 line-through">$199.99</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mb-2">
+                        <div class="bg-orange-500 h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">Only 7 left in stock!</p>
+                    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition">
+                        Grab Deal Now!
+                    </button>
+                </div>
+
+                <!-- Flash Deal 3 -->
+                <div class="promotion-card rounded-xl p-6 border border-gray-600">
+                    <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=300&fit=crop" alt="Tablet" class="w-full h-48 object-cover rounded-lg">
+                        <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-bold">50% OFF</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">10" Tablet Pro</h3>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl font-bold text-green-400">$299.99</span>
+                        <span class="text-lg text-gray-400 line-through">$599.99</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2 mb-2">
+                        <div class="bg-orange-500 h-2 rounded-full" style="width: 45%"></div>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">Only 12 left in stock!</p>
+                    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition">
+                        Grab Deal Now!
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Promotions -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">🎯 Category Deals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Electronics Promotion -->
+                <div class="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-2">Electronics Bonanza</h3>
+                        <p class="text-lg mb-4">Up to 65% OFF on all electronics</p>
+                        <button class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition">
+                            Shop Electronics
+                        </button>
+                    </div>
+                    <div class="absolute top-0 right-0 opacity-20">
+                        <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Accessories Promotion -->
+                <div class="relative bg-gradient-to-r from-green-600 to-teal-600 rounded-xl p-8 text-white overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-2">Accessory Paradise</h3>
+                        <p class="text-lg mb-4">Buy 2 Get 1 FREE on accessories</p>
+                        <button class="bg-white text-green-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition">
+                            Shop Accessories
+                        </button>
+                    </div>
+                    <div class="absolute top-0 right-0 opacity-20">
+                        <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bundle Deals -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">📦 Bundle Deals</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Bundle 1 -->
+                <div class="promotion-card rounded-xl p-6 border border-gray-600">
+                    <h3 class="text-2xl font-bold mb-4">Complete Home Office Bundle</h3>
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=150&h=150&fit=crop" alt="Laptop" class="w-full h-20 object-cover rounded">
+                        <img src="https://images.unsplash.com/photo-1527603815363-e79385e0747e?w=150&h=150&fit=crop" alt="Mouse" class="w-full h-20 object-cover rounded">
+                        <img src="https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?w=150&h=150&fit=crop" alt="Keyboard" class="w-full h-20 object-cover rounded">
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-green-400">$599.99</span>
+                            <span class="text-lg text-gray-400 line-through ml-2">$899.99</span>
+                        </div>
+                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Save $300</span>
+                    </div>
+                    <ul class="text-sm text-gray-300 mb-4 space-y-1">
+                        <li>• Laptop + Wireless Mouse + Mechanical Keyboard</li>
+                        <li>• Free laptop bag included</li>
+                        <li>• 2-year warranty on all items</li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition">
+                        Get Bundle Deal
+                    </button>
+                </div>
+
+                <!-- Bundle 2 -->
+                <div class="promotion-card rounded-xl p-6 border border-gray-600">
+                    <h3 class="text-2xl font-bold mb-4">Gaming Starter Pack</h3>
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=150&h=150&fit=crop" alt="Gaming Headset" class="w-full h-20 object-cover rounded">
+                        <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=150&h=150&fit=crop" alt="Gaming Mouse" class="w-full h-20 object-cover rounded">
+                        <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=150&h=150&fit=crop" alt="Controller" class="w-full h-20 object-cover rounded">
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-green-400">$199.99</span>
+                            <span class="text-lg text-gray-400 line-through ml-2">$349.99</span>
+                        </div>
+                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Save $150</span>
+                    </div>
+                    <ul class="text-sm text-gray-300 mb-4 space-y-1">
+                        <li>• Gaming Headset + RGB Mouse + Controller</li>
+                        <li>• Free mousepad included</li>
+                        <li>• 1-year warranty on all items</li>
+                    </ul>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition">
+                        Get Bundle Deal
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">🎉 Never Miss a Deal!</h2>
+            <p class="text-lg mb-6">Subscribe to our newsletter and be the first to know about exclusive promotions</p>
+            <div class="max-w-md mx-auto flex gap-3">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                <button class="bg-white text-indigo-600 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
+                    Subscribe
+                </button>
+            </div>
+            <p class="text-sm text-indigo-100 mt-3">Get 10% off your first order when you subscribe!</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-12 border-t border-gray-700">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">&copy; 2025 Tech Nova. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const saleEnd = new Date(now + (3 * 24 * 60 * 60 * 1000) + (12 * 60 * 60 * 1000)).getTime(); // 3 days 12 hours from now
+            const distance = saleEnd - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Add click handlers for deals
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Grab Deal') || button.textContent.includes('Shop') || button.textContent.includes('Get Bundle')) {
+                button.addEventListener('click', function() {
+                    // Show alert or redirect to product page
+                    alert('Redirecting to product page... (This would normally redirect to the actual product)');
+                });
+            }
+        });
+
+        // Newsletter subscription
+        document.querySelector('section:last-of-type button').addEventListener('click', function() {
+            const email = this.previousElementSibling.value;
+            if (email) {
+                alert('Thank you for subscribing! Check your email for your 10% discount code.');
+                this.previousElementSibling.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Premium Electronics Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-40 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" id="home-link" class="flex-shrink-0 text-2xl font-bold text-white flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-indigo-400"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        Tech Nova
+                    </a>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" id="shop-link" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Shop</a>
+                            <a href="promotions.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">🔥 Deals</a>
+                            <a href="support.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Support</a>
+                            <a href="#" id="about-link" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="#" id="contact-link" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Account Dropdown -->
+                    <div class="relative" id="account-dropdown">
+                        <button id="account-button" class="flex items-center text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                            <span id="account-display-name">Account</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="account-menu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                            <!-- Logged out menu -->
+                            <div id="logged-out-menu">
+                                <a href="login.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
+                                <a href="signup.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Sign Up</a>
+                            </div>
+                            <!-- Logged in menu -->
+                            <div id="logged-in-menu" class="hidden">
+                                <button id="profile-link" class="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
+                                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    My Profile
+                                </button>
+                                <button id="orders-link" class="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
+                                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                    </svg>
+                                    My Orders
+                                </button>
+                                <button id="settings-link" class="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
+                                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    Settings
+                                </button>
+                                <div class="border-t border-gray-700"></div>
+                                <button id="logout-button" class="block w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-700 hover:text-red-300">
+                                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="cart-button" class="relative text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                    <div class="ml-4 md:hidden">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" id="mobile-shop-link" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Shop</a>
+                <a href="promotions.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">🔥 Deals</a>
+                <a href="support.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Support</a>
+                <a href="#" id="mobile-about-link" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#" id="mobile-contact-link" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <div class="border-t border-gray-700 pt-3 mt-3">
+                    <a href="login.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+                    <a href="signup.html" class="bg-indigo-600 hover:bg-indigo-700 text-white block px-3 py-2 rounded-md text-base font-medium">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Shop View -->
+        <div id="shop-view">
+            <!-- Hero Section Slider -->
+            <div id="hero-slider" class="relative w-full max-w-6xl mx-auto mb-12 rounded-lg overflow-hidden shadow-2xl" style="height: 400px;">
+                <!-- Slide 1 -->
+                <div class="slider-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img id="slide1-img" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=400&fit=crop&q=80" class="w-full h-full object-cover" alt="Latest Gadgets">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h2 class="text-4xl font-bold mb-2">Discover the Future of Tech</h2>
+                            <p class="text-lg mb-4">Explore our newest collection of cutting-edge gadgets.</p>
+                            <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                                Shop Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Slide 2 -->
+                <div class="slider-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img id="slide2-img" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=400&fit=crop&q=80" class="w-full h-full object-cover" alt="Summer Sale">
+                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h2 class="text-4xl font-bold mb-2">Huge Summer Sale!</h2>
+                            <p class="text-lg mb-4">Up to 40% off on selected electronics.</p>
+                            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                                View Deals
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Slide 3 -->
+                <div class="slider-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img id="slide3-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=400&fit=crop&q=80" class="w-full h-full object-cover" alt="Free Shipping">
+                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h2 class="text-4xl font-bold mb-2">Free Shipping On All Orders</h2>
+                            <p class="text-lg mb-4">Get your favorite tech delivered to your doorstep for free.</p>
+                            <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="slider-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img id="slide4-img" src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1200&h=400&fit=crop&q=80" class="w-full h-full object-cover" alt="Gaming Setup">
+                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h2 class="text-4xl font-bold mb-2">Ultimate Gaming Experience</h2>
+                            <p class="text-lg mb-4">Professional gaming gear for serious gamers.</p>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                                Explore Gaming
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="slider-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img id="slide5-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=400&fit=crop&q=80" class="w-full h-full object-cover" alt="Workspace">
+                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h2 class="text-4xl font-bold mb-2">Build Your Perfect Workspace</h2>
+                            <p class="text-lg mb-4">Professional equipment for productivity and creativity.</p>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                                Shop Workspace
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider Navigation -->
+                <button id="prev-slide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button id="next-slide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                <!-- Slider Dots -->
+                <div id="slider-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    <!-- Dots will be generated by JS -->
+                </div>
+            </div>
+
+            <!-- Filters and Search -->
+            <div class="mb-8">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <!-- Enhanced Search Bar -->
+                    <div class="relative flex-1 max-w-md">
+                         <input type="text" id="search-bar" placeholder="Search for products, brands, categories..." class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                         <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                         </svg>
+                         <!-- Search Suggestions -->
+                         <div id="search-suggestions" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 rounded-lg mt-1 hidden z-10 shadow-lg">
+                             <!-- Suggestions will be populated by JS -->
+                         </div>
+                    </div>
+                    
+                    <!-- Sort and Filter Controls -->
+                    <div class="flex flex-wrap items-center gap-4">
+                        <!-- Sort Dropdown -->
+                        <div class="relative">
+                            <select id="sort-select" class="bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none pr-8">
+                                <option value="default">Sort by: Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name-asc">Name: A-Z</option>
+                                <option value="name-desc">Name: Z-A</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                            <svg class="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                        
+                        <!-- Price Range Filter -->
+                        <div class="relative">
+                            <select id="price-filter" class="bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none pr-8">
+                                <option value="all">All Prices</option>
+                                <option value="0-25">Under $25</option>
+                                <option value="25-50">$25 - $50</option>
+                                <option value="50-100">$50 - $100</option>
+                                <option value="100-500">$100 - $500</option>
+                                <option value="500+">$500+</option>
+                            </select>
+                            <svg class="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Category Filters -->
+                    <div id="category-filters" class="flex flex-wrap items-center gap-2">
+                         <button data-category="all" class="category-btn active px-4 py-2 text-sm font-medium border border-gray-600 rounded-lg hover:bg-gray-700 transition">All</button>
+                         <button data-category="electronics" class="category-btn px-4 py-2 text-sm font-medium border border-gray-600 rounded-lg hover:bg-gray-700 transition">Electronics</button>
+                         <button data-category="jewelery" class="category-btn px-4 py-2 text-sm font-medium border border-gray-600 rounded-lg hover:bg-gray-700 transition">Jewelry</button>
+                         <button data-category="men's clothing" class="category-btn px-4 py-2 text-sm font-medium border border-gray-600 rounded-lg hover:bg-gray-700 transition">Men's Clothing</button>
+                         <button data-category="women's clothing" class="category-btn px-4 py-2 text-sm font-medium border border-gray-600 rounded-lg hover:bg-gray-700 transition">Women's Clothing</button>
+                    </div>
+                </div>
+                
+                <!-- Active Filters Display -->
+                <div id="active-filters" class="mt-4 flex flex-wrap gap-2 hidden">
+                    <span class="text-sm text-gray-400">Filters:</span>
+                    <!-- Active filter tags will be added here -->
+                </div>
+            </div>
+            
+            <!-- Product Grid -->
+            <div id="loading-spinner" class="flex justify-center items-center h-64">
+                <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-indigo-500"></div>
+            </div>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product cards will be injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Cart View -->
+        <div id="cart-view" class="hidden">
+            <h1 class="text-3xl font-bold mb-6">Your Shopping Cart</h1>
+            <div id="cart-items-container" class="space-y-4">
+                <!-- Cart items will be injected here -->
+            </div>
+            <div id="cart-summary" class="mt-8 bg-gray-800 rounded-lg p-6">
+                 <div class="flex justify-between text-lg font-medium">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between text-sm text-gray-400 mt-2">
+                    <span>Shipping</span>
+                    <span>$5.00</span>
+                </div>
+                 <div class="border-t border-gray-700 my-4"></div>
+                <div class="flex justify-between text-xl font-bold">
+                    <span>Total</span>
+                    <span id="cart-total">$5.00</span>
+                </div>
+                <button id="checkout-btn" class="mt-6 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Proceed to Checkout</button>
+            </div>
+             <div id="empty-cart-message" class="text-center py-16 hidden">
+                <svg class="mx-auto h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <h3 class="mt-2 text-xl font-medium text-white">Your cart is empty</h3>
+                <p class="mt-1 text-gray-400">Looks like you haven't added anything to your cart yet.</p>
+                <div class="mt-6">
+                    <button id="return-to-shop-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition">
+                        Start Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Checkout View -->
+        <div id="checkout-view" class="hidden max-w-2xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6">Checkout</h1>
+            <div class="bg-gray-800 rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Shipping Information</h2>
+                <form id="checkout-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                     <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-300">Address</label>
+                        <input type="text" id="address" name="address" required class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition">Place Order</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- About Us View -->
+        <div id="about-view" class="hidden max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6 text-center">About Tech Nova</h1>
+            <div class="bg-gray-800 rounded-lg p-8 space-y-6 text-gray-300 leading-relaxed">
+                <p>Welcome to Tech Nova, your number one source for the latest and greatest in technology. We're dedicated to giving you the very best of gadgets and electronics, with a focus on quality, customer service, and uniqueness.</p>
+                <p>Founded in 2025, Tech Nova has come a long way from its beginnings. When we first started out, our passion for providing top-tier technology at affordable prices drove us to do intense research, and gave us the impetus to turn hard work and inspiration into to a booming online store. We now serve customers all over the world, and are thrilled to be a part of the fair-trade wing of the tech industry.</p>
+                <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+                <h2 class="text-2xl font-semibold text-white pt-4">Our Mission</h2>
+                <p>Our mission is to empower our customers by making the best technology accessible and affordable. We believe that everyone should have access to tools that can improve their lives, and we strive to be the bridge between innovation and the individual.</p>
+            </div>
+        </div>
+
+        <!-- Terms of Service View -->
+        <div id="terms-view" class="hidden max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6 text-center">Terms of Service</h1>
+            <div class="bg-gray-800 rounded-lg p-8 space-y-4 text-gray-300 text-sm leading-relaxed">
+                <h2 class="font-semibold text-white text-base">1. Acceptance of Terms</h2>
+                <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this website's particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+                <h2 class="font-semibold text-white text-base">2. Privacy Policy</h2>
+                <p>Registration data and certain other information about you are subject to our applicable privacy policy. For more information, see the full privacy policy at this website.</p>
+                <h2 class="font-semibold text-white text-base">3. User Conduct</h2>
+                <p>You agree not to use the service to send junk mail, spam, chain letters, or pyramid schemes. You agree not to transmit any material that is unlawful, harassing, libelous, or abusive.</p>
+                 <h2 class="font-semibold text-white text-base">4. Disclaimer of Warranties</h2>
+                <p>This site and its components are offered for informational purposes only; this site shall not be responsible or liable for the accuracy, usefulness or availability of any information transmitted or made available via the site, and shall not be responsible or liable for any error or omissions in that information.</p>
+            </div>
+        </div>
+        
+        <!-- Profile View -->
+        <div id="profile-view" class="hidden max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6">My Profile</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Profile Card -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gray-800 rounded-lg p-6 text-center">
+                        <div class="w-24 h-24 bg-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 id="profile-name" class="text-xl font-semibold text-white mb-2">Welcome!</h3>
+                        <p id="profile-email" class="text-gray-400 mb-4"></p>
+                        <span id="profile-member-since" class="inline-block bg-indigo-600 text-white px-3 py-1 rounded-full text-sm">Member since</span>
+                    </div>
+                </div>
+                
+                <!-- Profile Information -->
+                <div class="lg:col-span-2">
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white mb-6">Profile Information</h3>
+                        <form id="profile-form" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="profile-first-name" class="block text-sm font-medium text-gray-300">First Name</label>
+                                    <input type="text" id="profile-first-name" name="firstName" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label for="profile-last-name" class="block text-sm font-medium text-gray-300">Last Name</label>
+                                    <input type="text" id="profile-last-name" name="lastName" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="profile-email-input" class="block text-sm font-medium text-gray-300">Email</label>
+                                <input type="email" id="profile-email-input" name="email" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label for="profile-phone" class="block text-sm font-medium text-gray-300">Phone</label>
+                                <input type="tel" id="profile-phone" name="phone" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label for="profile-address" class="block text-sm font-medium text-gray-300">Address</label>
+                                <textarea id="profile-address" name="address" rows="3" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">
+                                    Update Profile
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Orders View -->
+        <div id="orders-view" class="hidden max-w-6xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6">My Orders</h1>
+            <div id="orders-container" class="space-y-4">
+                <!-- Orders will be dynamically loaded here -->
+            </div>
+            <div id="no-orders" class="hidden text-center py-12">
+                <svg class="mx-auto h-24 w-24 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                <h3 class="mt-4 text-xl font-medium text-gray-300">No orders yet</h3>
+                <p class="mt-2 text-gray-400">Start shopping to see your orders here</p>
+                <button id="start-shopping-btn" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg">
+                    Start Shopping
+                </button>
+            </div>
+        </div>
+        
+        <!-- Settings View -->
+        <div id="settings-view" class="hidden max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6">Account Settings</h1>
+            <div class="space-y-6">
+                <!-- Change Password -->
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-white mb-4">Change Password</h3>
+                    <form id="password-form" class="space-y-4">
+                        <div>
+                            <label for="current-password" class="block text-sm font-medium text-gray-300">Current Password</label>
+                            <input type="password" id="current-password" name="currentPassword" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="new-password" class="block text-sm font-medium text-gray-300">New Password</label>
+                            <input type="password" id="new-password" name="newPassword" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="confirm-password" class="block text-sm font-medium text-gray-300">Confirm New Password</label>
+                            <input type="password" id="confirm-password" name="confirmPassword" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">
+                                Update Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Notification Preferences -->
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-white mb-4">Notification Preferences</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <label for="email-notifications" class="text-gray-300 font-medium">Email Notifications</label>
+                                <p class="text-sm text-gray-400">Receive order updates and promotional emails</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="email-notifications" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <label for="sms-notifications" class="text-gray-300 font-medium">SMS Notifications</label>
+                                <p class="text-sm text-gray-400">Receive SMS alerts for order status</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="sms-notifications" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Delete Account -->
+                <div class="bg-red-900/30 border border-red-700 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-red-400 mb-4">Danger Zone</h3>
+                    <p class="text-gray-300 mb-4">Once you delete your account, there is no going back. Please be certain.</p>
+                    <button id="delete-account-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg">
+                        Delete Account
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact View -->
+        <div id="contact-view" class="hidden max-w-2xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6">Contact Us</h1>
+            <div class="bg-gray-800 rounded-lg p-8">
+                 <p class="text-gray-300 mb-6">Have questions? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label for="contact-name" class="block text-sm font-medium text-gray-300">Name</label>
+                        <input type="text" id="contact-name" name="contact-name" required class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                     <div>
+                        <label for="contact-email" class="block text-sm font-medium text-gray-300">Email</label>
+                        <input type="email" id="contact-email" name="contact-email" required class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                     <div>
+                        <label for="contact-message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="contact-message" name="contact-message" rows="4" required class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div id="modal-content" class="bg-gray-800 rounded-lg shadow-xl w-11/12 max-w-3xl m-4 relative max-h-[90vh] overflow-y-auto">
+            <!-- Modal content will be populated by JS -->
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition-all duration-300 toast-enter">
+        Item added to cart!
+    </div>
+    
+    <footer class="bg-gray-800 mt-12 border-t border-gray-700">
+        <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-semibold text-white">Tech Nova</h3>
+                    <p class="mt-4 text-gray-400 text-sm">Your one-stop shop for the latest and greatest in tech gadgets and accessories.</p>
+                </div>
+                <!-- Links Section -->
+                <div>
+                    <h4 class="text-base font-semibold text-gray-200 tracking-wider uppercase">Quick Links</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" id="footer-about-link" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" id="footer-contact-link" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="support.html" class="text-gray-400 hover:text-white transition">Support</a></li>
+                        <li><a href="promotions.html" class="text-gray-400 hover:text-white transition">Promotions</a></li>
+                        <li><a href="#" id="footer-terms-link" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media -->
+                <div>
+                     <h4 class="text-base font-semibold text-gray-200 tracking-wider uppercase">Follow Us</h4>
+                     <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.84C20.33,8.63 20.33,8.42 20.32,8.21C21.17,7.63 21.88,6.87 22.46,6Z" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 5.58,20 10,20C10.64,20 11.27,19.92 11.88,19.77C11.5,19.05 11.24,18.14 11.24,17.14C11.24,14.83 13.04,13.03 15.35,13.03C16.5,13.03 17.5,13.5 18.15,14.3C18.15,14.3 18.5,15.76 18.5,16.14C18.5,16.5 18.29,17.06 17.9,17.06C17.39,17.06 17.04,16.42 17.04,15.79C17.04,14.77 16.27,13.9 15.25,13.9C14.07,13.9 13.09,14.96 13.09,16.14C13.09,17.03 13.58,17.84 14.38,18.14C13.31,19.32 11.73,20 10,20A10,10 0 0,1 12,2Z" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg></a>
+                     </div>
+                </div>
+                <!-- Newsletter -->
+                <div class="md:col-span-1">
+                     <h4 class="text-base font-semibold text-gray-200 tracking-wider uppercase">Newsletter</h4>
+                     <p class="mt-4 text-gray-400 text-sm">Sign up for our newsletter to get the latest deals and updates.</p>
+                     <form id="newsletter-form" class="mt-4 flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Your Email" required class="w-full bg-gray-700 border border-gray-600 rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-md text-sm transition">Subscribe</button>
+                     </form>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
+                 &copy; 2025 Tech Nova. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
